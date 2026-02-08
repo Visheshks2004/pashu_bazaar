@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "38568941354",
+    "project_id": "pashu-bazaar-a9d94",
+    "storage_bucket": "pashu-bazaar-a9d94.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38568941354:android:be1a34486ff3db4611f053",
+        "android_client_info": {
+          "package_name": "com.example.pashu_bazaar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfYsCGIxrgDftlNOmEATyR9DTbGMz7aG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

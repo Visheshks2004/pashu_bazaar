@@ -1,0 +1,145 @@
+{
+  
+  
+  "@@locale": "en",
+   "verifyOtpTitle": "Verify OTP",
+  "@verifyOtpTitle": {},
+  
+  "pashuBazaar": "Pashu Bazaar",
+  "@pashuBazaar": {},
+  "searchHint": "Search by name or pincode",
+  "@searchHint": {},
+  "filter": "Filter",
+  "@filter": {},
+  "clearFilters": "Clear",
+  "@clearFilters": {},
+  "applyFilters": "Apply Filters",
+  "@applyFilters": {},
+  "maxPrice": "Max Price",
+  "@maxPrice": {},
+  "minMilk": "Minimum Milk",
+  "@minMilk": {},
+  "apply": "Apply",
+  "@apply": {},
+
+  "cow": "Cow",
+  "@cow": {},
+  "buffalo": "Buffalo",
+  "@buffalo": {},
+  "bull": "Bull",
+  "@bull": {},
+  "ox": "Ox",
+  "@ox": {},
+
+  "noResults": "No results found",
+  "@noResults": {},
+  
+  "login": "Login",
+  "@login": {},
+"enterPhone": "Enter your phone number",
+  "@enterPhone": {},
+"otpInfo": "We will send you a verification code",
+  "@otpInfo": {},
+"enterPhoneHint": "Enter phone number",
+  "@enterPhoneHint": {},
+"continueText": "Continue",
+  "@continueText": {},
+"invalidPhone": "Please enter a valid 10 digit mobile number",
+  "@invalidPhone": {},
+
+
+  "enterOtp": "Enter OTP",
+"@enterOtp": {},
+
+"verifyOtp": "Verify OTP",
+"@verifyOtp": {},
+
+"enterOtpHint": "Enter 6 digit OTP",
+"@enterOtpHint": {},
+
+"verify": "Verify",
+"@verify": {},
+
+"invalidOtp": "Invalid OTP",
+"@invalidOtp": {},
+
+  "details": "Details",
+  "@details": {},
+
+  "openInGoogleMaps": "Open in Google Maps",
+  "@openInGoogleMaps": {},
+
+  "call": "Call",
+  "@call": {},
+
+  "whatsapp": "WhatsApp",
+  "@whatsapp": {},
+
+  "whatsappMessage": "Hi, I'm interested in your",
+  "@whatsappMessage": {},
+
+  "milk": "Milk",
+  "@milk": {},
+
+  "literPerDay": "L/day",
+  "@literPerDay": {},
+
+  "age": "Age",
+  "@age": {},
+
+  "lactation": "Lactation",
+  "@lactation": {},
+
+  "quantity": "Quantity",
+  "@quantity": {},
+
+  "location": "Location",
+  "@location": {},
+
+  "description": "Description",
+  "@description": {},
+
+  "noAddress": "No address",
+  "@noAddress": {},
+
+  "noDescription": "No description",
+  "@noDescription": {},
+
+  "addListing": "Add Listing",
+  "@addListing": {},
+
+  "editListing": "Edit Listing",
+  "@editListing": {},
+
+  "updateListing": "Update Listing",
+  "@updateListing": {},
+
+  "addPhoto": "Add Photo",
+  "@addPhoto": {},
+
+  "pickLocation": "Pick Location",
+  "@pickLocation": {},
+
+  "pickLocationError": "Please select location",
+  "@pickLocationError": {},
+
+  "selectImage": "Please select an image",
+  "@selectImage": {},
+
+  "enterFullDetails": "Enter full details about animal",
+  "@enterFullDetails": {},
+
+  "enterField": "Enter {field}",
+  "@enterField": {
+    "placeholders": {
+      "field": {}
+    }
+  },
+
+  "genericError": "Error: {error}",
+  "@genericError": {
+    "placeholders": {
+      "error": {}
+    }
+  }
+}

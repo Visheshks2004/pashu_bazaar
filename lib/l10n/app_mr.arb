@@ -1,0 +1,140 @@
+{
+  
+  "@@locale": "mr",
+  "verifyOtpTitle": "ओटीपी पडताळणी",
+  "@verifyOtpTitle": {},
+  "login": "लॉगिन",
+  "@login": {},
+  "enterPhone": "अपना मोबाइल नंबर दर्ज करें",
+  "@enterPhone": {},
+  "otpInfo": "आपके नंबर पर OTP भेजा जाएगा",
+  "@otpInfo": {},
+  "enterPhoneHint": "मोबाइल नंबर दर्ज करें",
+  "@enterPhoneHint": {},
+  "continueText": "जारी रखें",
+  "@continueText": {},
+   "pashuBazaar": "पशु बाजार",
+  "@pashuBazaar": {},
+  "searchHint": "नाव किंवा पिनकोडने शोधा",
+  "@searchHint": {},
+  "filter": "फिल्टर",
+  "@filter": {},
+  "clearFilters": "काढा",
+  "@clearFilters": {},
+  "applyFilters": "फिल्टर लागू करा",
+  "@applyFilters": {},
+  "maxPrice": "कमाल किंमत",
+  "@maxPrice": {},
+  "minMilk": "किमान दूध",
+  "@minMilk": {},
+  "apply": "लागू करा",
+  "@apply": {},
+
+  "cow": "गाय",
+  "@cow": {},
+  "buffalo": "म्हैस",
+  "@buffalo": {},
+  "bull": "बैल",
+  "@bull": {},
+  "ox": "सांड",
+  "@ox": {},
+
+  "noResults": "कोणतेही परिणाम नाहीत",
+  "@noResults": {},
+
+  "enterOtp": "ओटीपी टाका",
+"@enterOtp": {},
+
+"verifyOtp": "ओटीपी पडताळा",
+"@verifyOtp": {},
+
+"enterOtpHint": "६ अंकी ओटीपी टाका",
+"@enterOtpHint": {},
+
+"verify": "तपासा",
+"@verify": {},
+
+"invalidOtp": "चुकीचा ओटीपी",
+"@invalidOtp": {},
+
+
+  "details": "तपशील",
+  "@details": {},
+
+  "openInGoogleMaps": "Google Maps मध्ये उघडा",
+  "@openInGoogleMaps": {},
+
+  "call": "कॉल करा",
+  "@call": {},
+
+  "whatsapp": "व्हॉट्सअॅप",
+  "@whatsapp": {},
+
+  "whatsappMessage": "नमस्कार, मला तुमच्या या जनावरात रस आहे",
+  "@whatsappMessage": {},
+
+  "milk": "दूध",
+  "@milk": {},
+
+  "literPerDay": "लिटर/दिवस",
+  "@literPerDay": {},
+
+  "age": "वय",
+  "@age": {},
+
+  "lactation": "दूध देण्याचा कालावधी",
+  "@lactation": {},
+
+  "quantity": "संख्या",
+  "@quantity": {},
+
+  "location": "स्थान",
+  "@location": {},
+
+  "description": "वर्णन",
+  "@description": {},
+
+  "noAddress": "पत्ता उपलब्ध नाही",
+  "@noAddress": {},
+
+  "noDescription": "वर्णन उपलब्ध नाही",
+  "@noDescription": {},
+
+  "addListing": "लिस्टिंग जोडा",
+  "@addListing": {},
+
+  "editListing": "लिस्टिंग संपादित करा",
+  "@editListing": {},
+
+  "updateListing": "लिस्टिंग अद्यतनित करा",
+  "@updateListing": {},
+
+  "addPhoto": "फोटो जोडा",
+  "@addPhoto": {},
+
+  "pickLocation": "स्थान निवडा",
+  "@pickLocation": {},
+
+  "pickLocationError": "कृपया स्थान निवडा",
+  "@pickLocationError": {},
+
+  "selectImage": "कृपया फोटो निवडा",
+  "@selectImage": {},
+
+  "enterFullDetails": "जनावराबद्दल संपूर्ण माहिती भरा",
+  "@enterFullDetails": {},
+
+  "enterField": "{field} भरा",
+  "@enterField": {
+    "placeholders": {
+      "field": {}
+    }
+  },
+
+  "genericError": "त्रुटी: {error}",
+  "@genericError": {
+    "placeholders": {
+      "error": {}
+    }
+  }
+}
