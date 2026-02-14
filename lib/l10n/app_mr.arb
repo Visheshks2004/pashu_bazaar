@@ -1,136 +1,300 @@
 {
-  
   "@@locale": "mr",
-  "verifyOtpTitle": "ओटीपी पडताळणी",
-  "@verifyOtpTitle": {},
-  "login": "लॉगिन",
-  "@login": {},
-  "enterPhone": "अपना मोबाइल नंबर दर्ज करें",
-  "@enterPhone": {},
-  "otpInfo": "आपके नंबर पर OTP भेजा जाएगा",
-  "@otpInfo": {},
-  "enterPhoneHint": "मोबाइल नंबर दर्ज करें",
-  "@enterPhoneHint": {},
-  "continueText": "जारी रखें",
-  "@continueText": {},
-   "pashuBazaar": "पशु बाजार",
-  "@pashuBazaar": {},
-  "searchHint": "नाव किंवा पिनकोडने शोधा",
-  "@searchHint": {},
-  "filter": "फिल्टर",
-  "@filter": {},
-  "clearFilters": "काढा",
-  "@clearFilters": {},
-  "applyFilters": "फिल्टर लागू करा",
-  "@applyFilters": {},
-  "maxPrice": "कमाल किंमत",
-  "@maxPrice": {},
-  "minMilk": "किमान दूध",
-  "@minMilk": {},
-  "apply": "लागू करा",
-  "@apply": {},
+  
+  
+  "myProfile": "माझे प्रोफाइल",
+  "@myProfile": {},
+  
+  "myFavorites": "माझे आवडते",
+  "@myFavorites": {},
+  
+  "myListings": "माझ्या याद्या",
+  "@myListings": {},
+  
+  "noFavoritesYet": "अजून आवडते नाहीत",
+  "@noFavoritesYet": {},
+  
+  "noListingsYet": "तुमच्याकडे अजून याद्या नाहीत",
+  "@noListingsYet": {},
+  
+  "addNewListing": "नवीन यादी जोडा",
+  "@addNewListing": {},
+  
+  "deleteListing": "यादी हटवा",
+  "@deleteListing": {},
+  
+  "deleteConfirmation": "तुम्हाला ही यादी खरोखर हटवायची आहे का?",
+  "@deleteConfirmation": {},
+  
+  "cancel": "रद्द करा",
+  "@cancel": {},
+  
+  "confirmDelete": "हटवा",
+  "@confirmDelete": {},
+  
+  "edit": "संपादित करा",
+  "@edit": {},
+  
+  "delete": "हटवा",
+  "@delete": {},
+  
+  "photo": "फोटो",
+  "@photo": {},
+  
+  "noPhone": "फोन नाही",
+  "@noPhone": {},
+  
+  "saveAnimalsHint": "हृदय चिन्ह टॅप करून आवडते प्राणी जतन करा",
+  "@saveAnimalsHint": {},
+  
+  "logout": "लॉगआउट",
+  "@logout": {},
+  
+  "logoutConfirmation": "तुम्हाला खरोखर लॉगआउट करायचे आहे का?",
+  "@logoutConfirmation": {},
 
-  "cow": "गाय",
-  "@cow": {},
-  "buffalo": "म्हैस",
-  "@buffalo": {},
-  "bull": "बैल",
-  "@bull": {},
-  "ox": "सांड",
-  "@ox": {},
-
-  "noResults": "कोणतेही परिणाम नाहीत",
-  "@noResults": {},
-
-  "enterOtp": "ओटीपी टाका",
-"@enterOtp": {},
-
-"verifyOtp": "ओटीपी पडताळा",
-"@verifyOtp": {},
-
-"enterOtpHint": "६ अंकी ओटीपी टाका",
-"@enterOtpHint": {},
-
-"verify": "तपासा",
-"@verify": {},
-
-"invalidOtp": "चुकीचा ओटीपी",
-"@invalidOtp": {},
-
-
-  "details": "तपशील",
-  "@details": {},
-
-  "openInGoogleMaps": "Google Maps मध्ये उघडा",
-  "@openInGoogleMaps": {},
-
-  "call": "कॉल करा",
-  "@call": {},
-
-  "whatsapp": "व्हॉट्सअॅप",
-  "@whatsapp": {},
-
-  "whatsappMessage": "नमस्कार, मला तुमच्या या जनावरात रस आहे",
-  "@whatsappMessage": {},
-
-  "milk": "दूध",
-  "@milk": {},
-
-  "literPerDay": "लिटर/दिवस",
-  "@literPerDay": {},
-
-  "age": "वय",
-  "@age": {},
-
-  "lactation": "दूध देण्याचा कालावधी",
-  "@lactation": {},
-
-  "quantity": "संख्या",
-  "@quantity": {},
-
-  "location": "स्थान",
-  "@location": {},
-
-  "description": "वर्णन",
-  "@description": {},
-
-  "noAddress": "पत्ता उपलब्ध नाही",
-  "@noAddress": {},
-
-  "noDescription": "वर्णन उपलब्ध नाही",
-  "@noDescription": {},
-
-  "addListing": "लिस्टिंग जोडा",
+  "titleField": "शीर्षक",
+  "@titleField": {},
+  
+  "priceField": "किंमत",
+  "@priceField": {},
+  
+  "ageYearsField": "वय (वर्षे)",
+  "@ageYearsField": {},
+  
+  "milkPerDayField": "दूध / दिवस (लीटर)",
+  "@milkPerDayField": {},
+  
+  "lactationField": "दुग्धकाल",
+  "@lactationField": {},
+  
+  "quantityField": "प्रमाण",
+  "@quantityField": {},
+  
+  "descriptionField": "वर्णन",
+  "@descriptionField": {},
+  
+  "addListing": "यादी जोडा",
   "@addListing": {},
-
-  "editListing": "लिस्टिंग संपादित करा",
+  
+  "editListing": "यादी संपादित करा",
   "@editListing": {},
-
-  "updateListing": "लिस्टिंग अद्यतनित करा",
+  
+  "updateListing": "यादी अपडेट करा",
   "@updateListing": {},
-
+  
   "addPhoto": "फोटो जोडा",
   "@addPhoto": {},
-
+  
   "pickLocation": "स्थान निवडा",
   "@pickLocation": {},
-
+  
   "pickLocationError": "कृपया स्थान निवडा",
   "@pickLocationError": {},
-
-  "selectImage": "कृपया फोटो निवडा",
+  
+  "selectImage": "कृपया एक प्रतिमा निवडा",
   "@selectImage": {},
-
-  "enterFullDetails": "जनावराबद्दल संपूर्ण माहिती भरा",
+  
+  "enterFullDetails": "प्राण्याबद्दल पूर्ण माहिती भरा",
   "@enterFullDetails": {},
-
-  "enterField": "{field} भरा",
+  
+ 
+  "category": "श्रेणी",
+  "@category": {},
+  
+  "selectCategory": "श्रेणी निवडा",
+  "@selectCategory": {},
+  
+  "categoryError": "कृपया श्रेणी निवडा",
+  "@categoryError": {},
+  
+  "allAnimals": "सर्व प्राणी",
+  "@allAnimals": {},
+  
+  "otherAnimals": "इतर प्राणी",
+  "@otherAnimals": {},
+  
+  
+  "cow": "गाय",
+  "@cow": {},
+  
+  "buffalo": "म्हैस",
+  "@buffalo": {},
+  
+  "bull": "बैल",
+  "@bull": {},
+  
+  "ox": "बैल",
+  "@ox": {},
+  
+  "dog": "कुत्रा",
+  "@dog": {},
+  
+  "sheep": "मेंढी",
+  "@sheep": {},
+  
+  "goat": "शेळी",
+  "@goat": {},
+  
+  "horse": "घोडा",
+  "@horse": {},
+  
+  "donkey": "गाढव",
+  "@donkey": {},
+  
+  "camel": "उंट",
+  "@camel": {},
+  
+  "pig": "डुक्कर",
+  "@pig": {},
+  
+  "rabbit": "ससा",
+  "@rabbit": {},
+  
+  "chicken": "कोंबडी",
+  "@chicken": {},
+  
+  "duck": "बदक",
+  "@duck": {},
+  
+  "others": "इतर",
+  "@others": {},
+  
+ 
+  "verifyOtpTitle": "OTP सत्यापित करा",
+  "@verifyOtpTitle": {},
+  
+  "enterOtp": "OTP प्रविष्ट करा",
+  "@enterOtp": {},
+  
+  "enter6DigitOtp": "6 अंकी OTP प्रविष्ट करा",
+  "@enter6DigitOtp": {},
+  
+  "enterOtpSentTo": "{phone} वर पाठवलेला OTP प्रविष्ट करा",
+  "@enterOtpSentTo": {
+    "placeholders": {
+      "phone": {}
+    }
+  },
+  
+  "yourNumber": "तुमचा नंबर",
+  "@yourNumber": {},
+  
+  "didntReceiveOtp": "OTP मिळाला नाही?",
+  "@didntReceiveOtp": {},
+  
+  "resend": "पुन्हा पाठवा",
+  "@resend": {},
+  
+  "verify": "सत्यापित करा",
+  "@verify": {},
+  
+  "invalidOtp": "अवैध OTP",
+  "@invalidOtp": {},
+  
+  "invalidOtpCode": "अवैध OTP कोड",
+  "@invalidOtpCode": {},
+  
+  "otpSessionExpired": "OTP सत्र संपले. कृपया पुन्हा विनंती करा",
+  "@otpSessionExpired": {},
+  
+  
+  "login": "लॉगिन",
+  "@login": {},
+  
+  "enterPhone": "आपला फोन नंबर प्रविष्ट करा",
+  "@enterPhone": {},
+  
+  "otpInfo": "आम्ही तुम्हाला एक सत्यापन कोड पाठवू",
+  "@otpInfo": {},
+  
+  "enterPhoneHint": "फोन नंबर प्रविष्ट करा",
+  "@enterPhoneHint": {},
+  
+  "continueText": "सुरू ठेवा",
+  "@continueText": {},
+  
+  "invalidPhone": "कृपया वैध 10 अंकी मोबाईल नंबर प्रविष्ट करा",
+  "@invalidPhone": {},
+  
+  
+  "pashuBazaar": "पशु बाजार",
+  "@pashuBazaar": {},
+  
+  "searchHint": "नाव किंवा पिनकोड नुसार शोधा",
+  "@searchHint": {},
+  
+  "filter": "फिल्टर",
+  "@filter": {},
+  
+  "clearFilters": "साफ करा",
+  "@clearFilters": {},
+  
+  "applyFilters": "फिल्टर लागू करा",
+  "@applyFilters": {},
+  
+  "maxPrice": "कमाल किंमत",
+  "@maxPrice": {},
+  
+  "minMilk": "किमान दूध",
+  "@minMilk": {},
+  
+  "apply": "लागू करा",
+  "@apply": {},
+  
+  "noResults": "काही परिणाम सापडले नाही",
+  "@noResults": {},
+  
+ 
+  "details": "तपशील",
+  "@details": {},
+  
+  "openInGoogleMaps": "Google नकाशामध्ये उघडा",
+  "@openInGoogleMaps": {},
+  
+  "call": "कॉल करा",
+  "@call": {},
+  
+  "whatsapp": "WhatsApp",
+  "@whatsapp": {},
+  
+  "whatsappMessage": "नमस्कार, मला तुमच्यामध्ये रस आहे",
+  "@whatsappMessage": {},
+  
+  "milk": "दूध",
+  "@milk": {},
+  
+  "literPerDay": "ली./दिवस",
+  "@literPerDay": {},
+  
+  "age": "वय",
+  "@age": {},
+  
+  "lactation": "दुग्धकाल",
+  "@lactation": {},
+  
+  "quantity": "प्रमाण",
+  "@quantity": {},
+  
+  "location": "स्थान",
+  "@location": {},
+  
+  "description": "वर्णन",
+  "@description": {},
+  
+  "noAddress": "पत्ता नाही",
+  "@noAddress": {},
+  
+  "noDescription": "वर्णन नाही",
+  "@noDescription": {},
+ 
+  "enterField": "{field} प्रविष्ट करा",
   "@enterField": {
     "placeholders": {
       "field": {}
     }
   },
-
+  
   "genericError": "त्रुटी: {error}",
   "@genericError": {
     "placeholders": {

@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:pashu_bazaar/features/splash/splash_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:pashu_bazaar/features/splash/splash_screen.dart';
 import 'package:pashu_bazaar/l10n/app_localizations.dart';
 import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
-  // Initialize Firebase
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -22,39 +21,60 @@ class MyApp extends StatefulWidget {
 
   @override
   State<MyApp> createState() => _MyAppState();
+
+  // Static method to access the state from anywhere
+  static _MyAppState? of(BuildContext context) {
+    return context.findAncestorStateOfType<_MyAppState>();
+  }
 }
 
 class _MyAppState extends State<MyApp> {
   Locale? _locale;
-  
+  bool _isLoading = true;
+
   @override
   void initState() {
     super.initState();
     _loadSavedLocale();
   }
-  
+
   Future<void> _loadSavedLocale() async {
     final prefs = await SharedPreferences.getInstance();
     final languageCode = prefs.getString('language');
     
     if (languageCode != null) {
+      _locale = Locale(languageCode);
+    }
+    
+    if (mounted) {
       setState(() {
-        _locale = Locale(languageCode);
+        _isLoading = false;
       });
     }
   }
-  
-  void _changeLocale(Locale locale) async {
+
+  // Method to change language globally
+  Future<void> changeLanguage(String languageCode) async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('language', locale.languageCode);
+    await prefs.setString('language', languageCode);
     
     setState(() {
-      _locale = locale;
+      _locale = Locale(languageCode);
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    if (_isLoading) {
+      return const MaterialApp(
+        home: Scaffold(
+          body: Center(
+            child: CircularProgressIndicator(),
+          ),
+        ),
+      );
+    }
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Pashu Bazaar',
@@ -67,7 +87,7 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       
-      // LOCALIZATION
+      // ✅ LOCALIZATION - Use the current locale
       locale: _locale,
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -99,8 +119,7 @@ class _MyAppState extends State<MyApp> {
         return const Locale('en');
       },
       
-      // Pass locale change callback to children
-      home: SplashScreen(changeLocale: _changeLocale),
+      home: const SplashScreen(),
     );
   }
 }

@@ -1,127 +1,294 @@
 {
   "@@locale": "hi",
-  "verifyOtpTitle": "ओटीपी सत्यापित करें",
-  "@verifyOtpTitle": {},
-  "login": "लॉगिन",
-  "@login": {},
-  "enterPhone": "अपना मोबाइल नंबर दर्ज करें",
-  "@enterPhone": {},
-  "otpInfo": "आपके नंबर पर OTP भेजा जाएगा",
-  "@otpInfo": {},
-  "enterPhoneHint": "मोबाइल नंबर दर्ज करें",
-  "@enterPhoneHint": {},
-  "continueText": "जारी रखें",
-  "@continueText": {},
-   "pashuBazaar": "पशु बाजार",
-  "@pashuBazaar": {},
-  "searchHint": "नाम या पिनकोड से खोजें",
-  "@searchHint": {},
-  "filter": "फ़िल्टर",
-  "@filter": {},
-  "clearFilters": "हटाएं",
-  "@clearFilters": {},
-  "applyFilters": "फ़िल्टर लागू करें",
-  "@applyFilters": {},
-  "maxPrice": "अधिकतम कीमत",
-  "@maxPrice": {},
-  "minMilk": "न्यूनतम दूध",
-  "@minMilk": {},
-  "apply": "लागू करें",
-  "@apply": {},
-
+  
+  
+  "myProfile": "मेरी प्रोफाइल",
+  "@myProfile": {},
+  
+  "myFavorites": "मेरे पसंदीदा",
+  "@myFavorites": {},
+  
+  "myListings": "मेरी लिस्टिंग",
+  "@myListings": {},
+  
+  "noFavoritesYet": "अभी तक कोई पसंदीदा नहीं",
+  "@noFavoritesYet": {},
+  
+  "noListingsYet": "आपकी अभी कोई लिस्टिंग नहीं है",
+  "@noListingsYet": {},
+  
+  "addNewListing": "नई लिस्टिंग जोड़ें",
+  "@addNewListing": {},
+  
+  "deleteListing": "लिस्टिंग हटाएं",
+  "@deleteListing": {},
+  
+  "deleteConfirmation": "क्या आप वाकई इस लिस्टिंग को हटाना चाहते हैं?",
+  "@deleteConfirmation": {},
+  
+  "cancel": "रद्द करें",
+  "@cancel": {},
+  
+  "confirmDelete": "हटाएं",
+  "@confirmDelete": {},
+  
+  "edit": "संपादित करें",
+  "@edit": {},
+  
+  "delete": "हटाएं",
+  "@delete": {},
+  
+  "photo": "फोटो",
+  "@photo": {},
+  
+  "noPhone": "कोई फोन नहीं",
+  "@noPhone": {},
+  
+  "saveAnimalsHint": "दिल आइकन टैप करके पसंदीदा पशु सहेजें",
+  "@saveAnimalsHint": {},
+  
+  "logout": "लॉगआउट",
+  "@logout": {},
+  
+  "logoutConfirmation": "क्या आप वाकई लॉगआउट करना चाहते हैं?",
+  "@logoutConfirmation": {},
+  
+  
+  "titleField": "शीर्षक",
+  "@titleField": {},
+  
+  "priceField": "कीमत",
+  "@priceField": {},
+  
+  "ageYearsField": "आयु (वर्ष)",
+  "@ageYearsField": {},
+  
+  "milkPerDayField": "दूध / दिन (लीटर)",
+  "@milkPerDayField": {},
+  
+  "lactationField": "दुग्धकाल",
+  "@lactationField": {},
+  
+  "quantityField": "मात्रा",
+  "@quantityField": {},
+  
+  "descriptionField": "विवरण",
+  "@descriptionField": {},
+  
+  "addListing": "लिस्टिंग जोड़ें",
+  "@addListing": {},
+  
+  "editListing": "लिस्टिंग संपादित करें",
+  "@editListing": {},
+  
+  "updateListing": "लिस्टिंग अपडेट करें",
+  "@updateListing": {},
+  
+  "addPhoto": "फोटो जोड़ें",
+  "@addPhoto": {},
+  
+  "pickLocation": "स्थान चुनें",
+  "@pickLocation": {},
+  
+  "pickLocationError": "कृपया स्थान चुनें",
+  "@pickLocationError": {},
+  
+  "selectImage": "कृपया एक छवि चुनें",
+  "@selectImage": {},
+  
+  "enterFullDetails": "पशु की पूरी जानकारी भरें",
+  "@enterFullDetails": {},
+  
+ 
+  "category": "श्रेणी",
+  "@category": {},
+  
+  "selectCategory": "श्रेणी चुनें",
+  "@selectCategory": {},
+  
+  "categoryError": "कृपया एक श्रेणी चुनें",
+  "@categoryError": {},
+  
+  "allAnimals": "सभी जानवर",
+  "@allAnimals": {},
+  
+  "otherAnimals": "अन्य जानवर",
+  "@otherAnimals": {},
+  
+ 
   "cow": "गाय",
   "@cow": {},
+  
   "buffalo": "भैंस",
   "@buffalo": {},
+  
   "bull": "बैल",
   "@bull": {},
-  "ox": "सांड",
+  
+  "ox": "बैल",
   "@ox": {},
-
+  
+  "dog": "कुत्ता",
+  "@dog": {},
+  
+  "sheep": "भेड़",
+  "@sheep": {},
+  
+  "goat": "बकरी",
+  "@goat": {},
+  
+  "horse": "घोड़ा",
+  "@horse": {},
+  
+  "donkey": "गधा",
+  "@donkey": {},
+  
+  "camel": "ऊंट",
+  "@camel": {},
+  
+  "pig": "सूअर",
+  "@pig": {},
+  
+  "rabbit": "खरगोश",
+  "@rabbit": {},
+  
+  "chicken": "मुर्गी",
+  "@chicken": {},
+  
+  "duck": "बतख",
+  "@duck": {},
+  
+  "others": "अन्य",
+  "@others": {},
+  
+  
+  "verifyOtpTitle": "OTP सत्यापित करें",
+  "@verifyOtpTitle": {},
+  
+  "enterOtp": "OTP दर्ज करें",
+  "@enterOtp": {},
+  
+  "enter6DigitOtp": "6 अंकों का OTP दर्ज करें",
+  "@enter6DigitOtp": {},
+  
+  "enterOtpSentTo": "{phone} पर भेजा गया OTP दर्ज करें",
+  "@enterOtpSentTo": {
+    "placeholders": {
+      "phone": {}
+    }
+  },
+  
+  "yourNumber": "आपका नंबर",
+  "@yourNumber": {},
+  
+  "didntReceiveOtp": "OTP नहीं मिला?",
+  "@didntReceiveOtp": {},
+  
+  "resend": "पुनः भेजें",
+  "@resend": {},
+  
+  "verify": "सत्यापित करें",
+  "@verify": {},
+  
+  "invalidOtp": "अमान्य OTP",
+  "@invalidOtp": {},
+  
+  "invalidOtpCode": "अमान्य OTP कोड",
+  "@invalidOtpCode": {},
+  
+  "otpSessionExpired": "OTP सत्र समाप्त हो गया। कृपया पुनः अनुरोध करें",
+  "@otpSessionExpired": {},
+  
+ 
+  "login": "लॉगिन",
+  "@login": {},
+  
+  "enterPhone": "अपना फोन नंबर दर्ज करें",
+  "@enterPhone": {},
+  
+  "otpInfo": "हम आपको एक सत्यापन कोड भेजेंगे",
+  "@otpInfo": {},
+  
+  "enterPhoneHint": "फोन नंबर दर्ज करें",
+  "@enterPhoneHint": {},
+  
+  "continueText": "जारी रखें",
+  "@continueText": {},
+  
+  "invalidPhone": "कृपया एक वैध 10 अंकीय मोबाइल नंबर दर्ज करें",
+  "@invalidPhone": {},
+  
+ 
+  "pashuBazaar": "पशु बाजार",
+  "@pashuBazaar": {},
+  
+  "searchHint": "नाम या पिनकोड से खोजें",
+  "@searchHint": {},
+  
+  "filter": "फ़िल्टर",
+  "@filter": {},
+  
+  "clearFilters": "साफ करें",
+  "@clearFilters": {},
+  
+  "applyFilters": "फ़िल्टर लागू करें",
+  "@applyFilters": {},
+  
+  "maxPrice": "अधिकतम कीमत",
+  "@maxPrice": {},
+  
+  "minMilk": "न्यूनतम दूध",
+  "@minMilk": {},
+  
+  "apply": "लागू करें",
+  "@apply": {},
+  
   "noResults": "कोई परिणाम नहीं मिला",
   "@noResults": {},
-
-  "enterOtp": "ओटीपी दर्ज करें",
-"@enterOtp": {},
-
-"verifyOtp": "ओटीपी सत्यापित करें",
-"@verifyOtp": {},
-
-"enterOtpHint": "6 अंकों का ओटीपी दर्ज करें",
-"@enterOtpHint": {},
-
-"verify": "सत्यापित करें",
-"@verify": {},
-
-"invalidOtp": "गलत ओटीपी",
-"@invalidOtp": {},
-
+  
 
   "details": "विवरण",
   "@details": {},
-
-  "openInGoogleMaps": "Google Maps में खोलें",
+  
+  "openInGoogleMaps": "Google मानचित्र में खोलें",
   "@openInGoogleMaps": {},
-
+  
   "call": "कॉल करें",
   "@call": {},
-
-  "whatsapp": "व्हाट्सएप",
+  
+  "whatsapp": "WhatsApp",
   "@whatsapp": {},
-
-  "whatsappMessage": "नमस्ते, मुझे आपके इस पशु में रुचि है",
+  
+  "whatsappMessage": "नमस्ते, मुझे आपकी रुचि है",
   "@whatsappMessage": {},
-
+  
   "milk": "दूध",
   "@milk": {},
-
-  "literPerDay": "लीटर/दिन",
+  
+  "literPerDay": "ली./दिन",
   "@literPerDay": {},
-
-  "age": "उम्र",
+  
+  "age": "आयु",
   "@age": {},
-
-  "lactation": "दुग्धावस्था",
+  
+  "lactation": "दुग्धकाल",
   "@lactation": {},
-
-  "quantity": "संख्या",
+  
+  "quantity": "मात्रा",
   "@quantity": {},
-
+  
   "location": "स्थान",
   "@location": {},
-
+  
   "description": "विवरण",
   "@description": {},
-
-  "noAddress": "पता उपलब्ध नहीं है",
+  
+  "noAddress": "कोई पता नहीं",
   "@noAddress": {},
-
-  "noDescription": "विवरण उपलब्ध नहीं है",
+  
+  "noDescription": "कोई विवरण नहीं",
   "@noDescription": {},
-
-  "addListing": "लिस्टिंग जोड़ें",
-  "@addListing": {},
-
-  "editListing": "लिस्टिंग संपादित करें",
-  "@editListing": {},
-
-  "updateListing": "लिस्टिंग अपडेट करें",
-  "@updateListing": {},
-
-  "addPhoto": "फोटो जोड़ें",
-  "@addPhoto": {},
-
-  "pickLocation": "स्थान चुनें",
-  "@pickLocation": {},
-
-  "pickLocationError": "कृपया स्थान चुनें",
-  "@pickLocationError": {},
-
-  "selectImage": "कृपया एक फोटो चुनें",
-  "@selectImage": {},
-
-  "enterFullDetails": "पशु की पूरी जानकारी भरें",
-  "@enterFullDetails": {},
+  
 
   "enterField": "{field} दर्ज करें",
   "@enterField": {
@@ -129,7 +296,7 @@
       "field": {}
     }
   },
-
+  
   "genericError": "त्रुटि: {error}",
   "@genericError": {
     "placeholders": {

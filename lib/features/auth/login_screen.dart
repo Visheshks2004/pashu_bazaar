@@ -4,10 +4,97 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:pashu_bazaar/features/auth/otp_screen.dart';
 import 'package:pashu_bazaar/l10n/app_localizations.dart';
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   final phoneController = TextEditingController();
+  bool isLoading = false;
+
+  @override
+  void dispose() {
+    phoneController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _sendOtp() async {
+    final l10n = AppLocalizations.of(context)!;
+    
+    // Validate phone number
+    if (phoneController.text.trim().length != 10) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(l10n.invalidPhone),
+          backgroundColor: Colors.red,
+        ),
+      );
+      return;
+    }
+
+    setState(() => isLoading = true);
+
+    try {
+      final phone = "+91${phoneController.text.trim()}";
+      
+      await FirebaseAuth.instance.verifyPhoneNumber(
+        phoneNumber: phone,
+        timeout: const Duration(seconds: 60),
+        verificationCompleted: (PhoneAuthCredential credential) {
+          // Auto sign in for some devices
+          print('Verification completed automatically');
+        },
+        verificationFailed: (FirebaseAuthException e) {
+          setState(() => isLoading = false);
+          
+          String errorMessage = l10n.invalidPhone;
+          if (e.code == 'invalid-phone-number') {
+            errorMessage = 'Invalid phone number';
+          } else if (e.code == 'too-many-requests') {
+            errorMessage = 'Too many requests. Try again later';
+          } else if (e.code == 'network-request-failed') {
+            errorMessage = 'Network error. Check your internet connection';
+          }
+          
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(errorMessage),
+              backgroundColor: Colors.red,
+            ),
+          );
+        },
+        codeSent: (String verificationId, int? resendToken) {
+          setState(() => isLoading = false);
+          
+          // ✅ Pass both verificationId and phoneNumber
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => OtpScreen(
+                verificationId: verificationId,
+                phoneNumber: phone, // This now works because we added the parameter
+              ),
+            ),
+          );
+        },
+        codeAutoRetrievalTimeout: (String verificationId) {
+          setState(() => isLoading = false);
+          print('Code auto retrieval timeout');
+        },
+      );
+    } catch (e) {
+      setState(() => isLoading = false);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Error: ${e.toString()}'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +132,7 @@ class LoginScreen extends StatelessWidget {
             TextField(
               controller: phoneController,
               keyboardType: TextInputType.phone,
+              maxLength: 10,
               decoration: InputDecoration(
                 prefixIcon: const Padding(
                   padding: EdgeInsets.all(12),
@@ -54,6 +142,7 @@ class LoginScreen extends StatelessWidget {
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
+                counterText: "",
               ),
             )
                 .animate()
@@ -66,30 +155,19 @@ class LoginScreen extends StatelessWidget {
               width: double.infinity,
               height: 50,
               child: ElevatedButton(
-                onPressed: () async {
-                  final phone = "+91${phoneController.text.trim()}";
-
-                  await FirebaseAuth.instance.verifyPhoneNumber(
-                    phoneNumber: phone,
-                    verificationCompleted: (credential) {},
-                    verificationFailed: (e) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text(e.message ?? "Error")),
-                      );
-                    },
-                    codeSent: (verificationId, _) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) =>
-                              OtpScreen(verificationId: verificationId),
-                        ),
-                      );
-                    },
-                    codeAutoRetrievalTimeout: (_) {},
-                  );
-                },
-                child: Text(l10n.continueText),
+                onPressed: isLoading ? null : _sendOtp,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: isLoading
+                    ? const CircularProgressIndicator(color: Colors.white)
+                    : Text(
+                        l10n.continueText,
+                        style: const TextStyle(fontSize: 16),
+                      ),
               ),
             )
                 .animate()

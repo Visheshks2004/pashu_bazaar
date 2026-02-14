@@ -100,11 +100,419 @@ abstract class AppLocalizations {
     Locale('mr'),
   ];
 
+  /// No description provided for @myProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'My Profile'**
+  String get myProfile;
+
+  /// No description provided for @myFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'My Favorites'**
+  String get myFavorites;
+
+  /// No description provided for @myListings.
+  ///
+  /// In en, this message translates to:
+  /// **'My Listings'**
+  String get myListings;
+
+  /// No description provided for @noFavoritesYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No favorites yet'**
+  String get noFavoritesYet;
+
+  /// No description provided for @noListingsYet.
+  ///
+  /// In en, this message translates to:
+  /// **'You have no listings yet'**
+  String get noListingsYet;
+
+  /// No description provided for @addNewListing.
+  ///
+  /// In en, this message translates to:
+  /// **'Add New Listing'**
+  String get addNewListing;
+
+  /// No description provided for @deleteListing.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Listing'**
+  String get deleteListing;
+
+  /// No description provided for @deleteConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this listing?'**
+  String get deleteConfirmation;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @confirmDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get confirmDelete;
+
+  /// No description provided for @edit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get edit;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
+  /// No description provided for @photo.
+  ///
+  /// In en, this message translates to:
+  /// **'Photo'**
+  String get photo;
+
+  /// No description provided for @noPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'No phone'**
+  String get noPhone;
+
+  /// No description provided for @saveAnimalsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Save animals you like by tapping the heart icon'**
+  String get saveAnimalsHint;
+
+  /// No description provided for @logout.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout'**
+  String get logout;
+
+  /// No description provided for @logoutConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to logout?'**
+  String get logoutConfirmation;
+
+  /// No description provided for @titleField.
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get titleField;
+
+  /// No description provided for @priceField.
+  ///
+  /// In en, this message translates to:
+  /// **'Price'**
+  String get priceField;
+
+  /// No description provided for @ageYearsField.
+  ///
+  /// In en, this message translates to:
+  /// **'Age (Years)'**
+  String get ageYearsField;
+
+  /// No description provided for @milkPerDayField.
+  ///
+  /// In en, this message translates to:
+  /// **'Milk / Day (Litre)'**
+  String get milkPerDayField;
+
+  /// No description provided for @lactationField.
+  ///
+  /// In en, this message translates to:
+  /// **'Lactation'**
+  String get lactationField;
+
+  /// No description provided for @quantityField.
+  ///
+  /// In en, this message translates to:
+  /// **'Quantity'**
+  String get quantityField;
+
+  /// No description provided for @descriptionField.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get descriptionField;
+
+  /// No description provided for @addListing.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Listing'**
+  String get addListing;
+
+  /// No description provided for @editListing.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Listing'**
+  String get editListing;
+
+  /// No description provided for @updateListing.
+  ///
+  /// In en, this message translates to:
+  /// **'Update Listing'**
+  String get updateListing;
+
+  /// No description provided for @addPhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Photo'**
+  String get addPhoto;
+
+  /// No description provided for @pickLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick Location'**
+  String get pickLocation;
+
+  /// No description provided for @pickLocationError.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select location'**
+  String get pickLocationError;
+
+  /// No description provided for @selectImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select an image'**
+  String get selectImage;
+
+  /// No description provided for @enterFullDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter full details about animal'**
+  String get enterFullDetails;
+
+  /// No description provided for @category.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get category;
+
+  /// No description provided for @selectCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Category'**
+  String get selectCategory;
+
+  /// No description provided for @categoryError.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select a category'**
+  String get categoryError;
+
+  /// No description provided for @allAnimals.
+  ///
+  /// In en, this message translates to:
+  /// **'All Animals'**
+  String get allAnimals;
+
+  /// No description provided for @otherAnimals.
+  ///
+  /// In en, this message translates to:
+  /// **'Other Animals'**
+  String get otherAnimals;
+
+  /// No description provided for @cow.
+  ///
+  /// In en, this message translates to:
+  /// **'Cow'**
+  String get cow;
+
+  /// No description provided for @buffalo.
+  ///
+  /// In en, this message translates to:
+  /// **'Buffalo'**
+  String get buffalo;
+
+  /// No description provided for @bull.
+  ///
+  /// In en, this message translates to:
+  /// **'Bull'**
+  String get bull;
+
+  /// No description provided for @ox.
+  ///
+  /// In en, this message translates to:
+  /// **'Ox'**
+  String get ox;
+
+  /// No description provided for @dog.
+  ///
+  /// In en, this message translates to:
+  /// **'Dog'**
+  String get dog;
+
+  /// No description provided for @sheep.
+  ///
+  /// In en, this message translates to:
+  /// **'Sheep'**
+  String get sheep;
+
+  /// No description provided for @goat.
+  ///
+  /// In en, this message translates to:
+  /// **'Goat'**
+  String get goat;
+
+  /// No description provided for @horse.
+  ///
+  /// In en, this message translates to:
+  /// **'Horse'**
+  String get horse;
+
+  /// No description provided for @donkey.
+  ///
+  /// In en, this message translates to:
+  /// **'Donkey'**
+  String get donkey;
+
+  /// No description provided for @camel.
+  ///
+  /// In en, this message translates to:
+  /// **'Camel'**
+  String get camel;
+
+  /// No description provided for @pig.
+  ///
+  /// In en, this message translates to:
+  /// **'Pig'**
+  String get pig;
+
+  /// No description provided for @rabbit.
+  ///
+  /// In en, this message translates to:
+  /// **'Rabbit'**
+  String get rabbit;
+
+  /// No description provided for @chicken.
+  ///
+  /// In en, this message translates to:
+  /// **'Chicken'**
+  String get chicken;
+
+  /// No description provided for @duck.
+  ///
+  /// In en, this message translates to:
+  /// **'Duck'**
+  String get duck;
+
+  /// No description provided for @others.
+  ///
+  /// In en, this message translates to:
+  /// **'Others'**
+  String get others;
+
   /// No description provided for @verifyOtpTitle.
   ///
   /// In en, this message translates to:
   /// **'Verify OTP'**
   String get verifyOtpTitle;
+
+  /// No description provided for @enterOtp.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter OTP'**
+  String get enterOtp;
+
+  /// No description provided for @enter6DigitOtp.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter 6 digit OTP'**
+  String get enter6DigitOtp;
+
+  /// No description provided for @enterOtpSentTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter OTP sent to {phone}'**
+  String enterOtpSentTo(Object phone);
+
+  /// No description provided for @yourNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'your number'**
+  String get yourNumber;
+
+  /// No description provided for @didntReceiveOtp.
+  ///
+  /// In en, this message translates to:
+  /// **'Didn\'t receive OTP?'**
+  String get didntReceiveOtp;
+
+  /// No description provided for @resend.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend'**
+  String get resend;
+
+  /// No description provided for @verify.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify'**
+  String get verify;
+
+  /// No description provided for @invalidOtp.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid OTP'**
+  String get invalidOtp;
+
+  /// No description provided for @invalidOtpCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid OTP code'**
+  String get invalidOtpCode;
+
+  /// No description provided for @otpSessionExpired.
+  ///
+  /// In en, this message translates to:
+  /// **'OTP session expired. Please request again'**
+  String get otpSessionExpired;
+
+  /// No description provided for @login.
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
+  String get login;
+
+  /// No description provided for @enterPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your phone number'**
+  String get enterPhone;
+
+  /// No description provided for @otpInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'We will send you a verification code'**
+  String get otpInfo;
+
+  /// No description provided for @enterPhoneHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter phone number'**
+  String get enterPhoneHint;
+
+  /// No description provided for @continueText.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get continueText;
+
+  /// No description provided for @invalidPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid 10 digit mobile number'**
+  String get invalidPhone;
 
   /// No description provided for @pashuBazaar.
   ///
@@ -154,101 +562,11 @@ abstract class AppLocalizations {
   /// **'Apply'**
   String get apply;
 
-  /// No description provided for @cow.
-  ///
-  /// In en, this message translates to:
-  /// **'Cow'**
-  String get cow;
-
-  /// No description provided for @buffalo.
-  ///
-  /// In en, this message translates to:
-  /// **'Buffalo'**
-  String get buffalo;
-
-  /// No description provided for @bull.
-  ///
-  /// In en, this message translates to:
-  /// **'Bull'**
-  String get bull;
-
-  /// No description provided for @ox.
-  ///
-  /// In en, this message translates to:
-  /// **'Ox'**
-  String get ox;
-
   /// No description provided for @noResults.
   ///
   /// In en, this message translates to:
   /// **'No results found'**
   String get noResults;
-
-  /// No description provided for @login.
-  ///
-  /// In en, this message translates to:
-  /// **'Login'**
-  String get login;
-
-  /// No description provided for @enterPhone.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter your phone number'**
-  String get enterPhone;
-
-  /// No description provided for @otpInfo.
-  ///
-  /// In en, this message translates to:
-  /// **'We will send you a verification code'**
-  String get otpInfo;
-
-  /// No description provided for @enterPhoneHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter phone number'**
-  String get enterPhoneHint;
-
-  /// No description provided for @continueText.
-  ///
-  /// In en, this message translates to:
-  /// **'Continue'**
-  String get continueText;
-
-  /// No description provided for @invalidPhone.
-  ///
-  /// In en, this message translates to:
-  /// **'Please enter a valid 10 digit mobile number'**
-  String get invalidPhone;
-
-  /// No description provided for @enterOtp.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter OTP'**
-  String get enterOtp;
-
-  /// No description provided for @verifyOtp.
-  ///
-  /// In en, this message translates to:
-  /// **'Verify OTP'**
-  String get verifyOtp;
-
-  /// No description provided for @enterOtpHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter 6 digit OTP'**
-  String get enterOtpHint;
-
-  /// No description provided for @verify.
-  ///
-  /// In en, this message translates to:
-  /// **'Verify'**
-  String get verify;
-
-  /// No description provided for @invalidOtp.
-  ///
-  /// In en, this message translates to:
-  /// **'Invalid OTP'**
-  String get invalidOtp;
 
   /// No description provided for @details.
   ///
@@ -333,54 +651,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No description'**
   String get noDescription;
-
-  /// No description provided for @addListing.
-  ///
-  /// In en, this message translates to:
-  /// **'Add Listing'**
-  String get addListing;
-
-  /// No description provided for @editListing.
-  ///
-  /// In en, this message translates to:
-  /// **'Edit Listing'**
-  String get editListing;
-
-  /// No description provided for @updateListing.
-  ///
-  /// In en, this message translates to:
-  /// **'Update Listing'**
-  String get updateListing;
-
-  /// No description provided for @addPhoto.
-  ///
-  /// In en, this message translates to:
-  /// **'Add Photo'**
-  String get addPhoto;
-
-  /// No description provided for @pickLocation.
-  ///
-  /// In en, this message translates to:
-  /// **'Pick Location'**
-  String get pickLocation;
-
-  /// No description provided for @pickLocationError.
-  ///
-  /// In en, this message translates to:
-  /// **'Please select location'**
-  String get pickLocationError;
-
-  /// No description provided for @selectImage.
-  ///
-  /// In en, this message translates to:
-  /// **'Please select an image'**
-  String get selectImage;
-
-  /// No description provided for @enterFullDetails.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter full details about animal'**
-  String get enterFullDetails;
 
   /// No description provided for @enterField.
   ///

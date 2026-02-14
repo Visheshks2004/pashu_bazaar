@@ -7,9 +7,7 @@ import 'package:pashu_bazaar/features/language/language_screen.dart';
 import 'package:pashu_bazaar/features/auth/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
-  final Function(Locale)? changeLocale;
-  
-  const SplashScreen({super.key, this.changeLocale});
+  const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -24,38 +22,41 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> _initializeApp() async {
     try {
-      print('Splash: Initializing app...');
+      // Small delay for splash animation
+      await Future.delayed(const Duration(seconds: 2));
       
-      // Check if language is selected
+      if (!mounted) return;
+      
+      // ✅ Check if language is selected FIRST
       final prefs = await SharedPreferences.getInstance();
       final languageCode = prefs.getString('language');
       
-      print('Splash: Language code = $languageCode');
+      print('Splash: Language code = $languageCode'); // Debug log
       
-      // Small delay for splash
-      await Future.delayed(const Duration(seconds: 2));
-      
-      if (!mounted) {
-        print('Splash: Not mounted, returning');
+      if (languageCode == null) {
+        // No language selected - go to LanguageScreen
+        print('Splash: No language selected, going to LanguageScreen');
+        _navigateToLanguageScreen();
         return;
       }
       
+      // Language is selected, check authentication
       final user = FirebaseAuth.instance.currentUser;
-      print('Splash: Current user = $user');
+      print('Splash: User = ${user?.phoneNumber}');
       
-      if (languageCode == null) {
-        print('Splash: No language selected, navigating to LanguageScreen');
-        _navigateToLanguageScreen();
-      } else if (user == null) {
-        print('Splash: Language selected but no user, navigating to LoginScreen');
+      if (user == null) {
+        // Language selected but not logged in - go to Login
+        print('Splash: Not logged in, going to LoginScreen');
         _navigateToLoginScreen();
       } else {
-        print('Splash: Language selected and user logged in, navigating to HomeScreen');
+        // Language selected and logged in - go to Home
+        print('Splash: Logged in, going to HomeScreen');
         _navigateToHomeScreen();
       }
     } catch (e) {
       print('Splash Error: $e');
       if (mounted) {
+        // On error, go to language screen as safe fallback
         _navigateToLanguageScreen();
       }
     }
@@ -64,13 +65,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void _navigateToLanguageScreen() {
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
-        builder: (_) => LanguageScreen(
-          onLanguageSelected: (languageCode) {
-            if (widget.changeLocale != null) {
-              widget.changeLocale!(Locale(languageCode));
-            }
-          },
-        ),
+        builder: (_) => const LanguageScreen(),
       ),
     );
   }
@@ -78,7 +73,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void _navigateToLoginScreen() {
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
-        builder: (_) => LoginScreen(),
+        builder: (_) => const LoginScreen(),
       ),
     );
   }
@@ -99,7 +94,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // App Icon/Logo
+            // App Logo
             Container(
               width: 120,
               height: 120,
@@ -140,7 +135,7 @@ class _SplashScreenState extends State<SplashScreen> {
             
             const SizedBox(height: 40),
             
-            // Loading
+            // Loading Indicator
             const CircularProgressIndicator(
               color: Colors.green,
             ),

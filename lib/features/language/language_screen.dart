@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../auth/login_screen.dart';
+import 'package:pashu_bazaar/features/auth/login_screen.dart';
+import 'package:pashu_bazaar/l10n/app_localizations.dart';
+import 'package:pashu_bazaar/main.dart'; // Import to access MyApp
 
 class LanguageScreen extends StatefulWidget {
-  final Function(String)? onLanguageSelected;
-  
-  const LanguageScreen({super.key, this.onLanguageSelected});
+  const LanguageScreen({super.key});
 
   @override
   State<LanguageScreen> createState() => _LanguageScreenState();
 }
 
 class _LanguageScreenState extends State<LanguageScreen> {
+  String _selectedLanguage = 'English';
   String _selectedLanguageCode = 'en';
 
   final Map<String, String> _languages = {
@@ -31,7 +32,6 @@ class _LanguageScreenState extends State<LanguageScreen> {
     final savedLanguageCode = prefs.getString('language');
     
     if (savedLanguageCode != null) {
-      // Find the language name from code
       final entry = _languages.entries.firstWhere(
         (entry) => entry.value == savedLanguageCode,
         orElse: () => _languages.entries.first,
@@ -39,6 +39,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
       
       if (mounted) {
         setState(() {
+          _selectedLanguage = entry.key;
           _selectedLanguageCode = entry.value;
         });
       }
@@ -47,13 +48,8 @@ class _LanguageScreenState extends State<LanguageScreen> {
 
   Future<void> _saveAndContinue() async {
     try {
-      final prefs = await SharedPreferences.getInstance();
-      await prefs.setString('language', _selectedLanguageCode);
-      
-      // Callback to update app locale
-      if (widget.onLanguageSelected != null) {
-        widget.onLanguageSelected!(_selectedLanguageCode);
-      }
+      // ✅ CHANGE LANGUAGE GLOBALLY
+      await MyApp.of(context)?.changeLanguage(_selectedLanguageCode);
       
       // Navigate to login screen
       if (mounted) {
@@ -65,7 +61,6 @@ class _LanguageScreenState extends State<LanguageScreen> {
       }
     } catch (e) {
       print('Error saving language: $e');
-      // Still navigate even if save fails
       if (mounted) {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
@@ -78,6 +73,8 @@ class _LanguageScreenState extends State<LanguageScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -86,11 +83,10 @@ class _LanguageScreenState extends State<LanguageScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Header
               const SizedBox(height: 20),
-              const Text(
-                'Welcome to',
-                style: TextStyle(fontSize: 18, color: Colors.grey),
+              Text(
+                l10n != null ? 'Welcome to' : 'Welcome to',
+                style: TextStyle(fontSize: 18, color: Colors.grey.shade600),
               ),
               const SizedBox(height: 5),
               const Text(
@@ -102,14 +98,13 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 ),
               ),
               const SizedBox(height: 10),
-              const Text(
-                'Select your preferred language',
-                style: TextStyle(fontSize: 16, color: Colors.grey),
+              Text(
+                l10n != null ? 'Select your preferred language' : 'Select your preferred language',
+                style: TextStyle(fontSize: 16, color: Colors.grey.shade600),
               ),
               
               const SizedBox(height: 40),
               
-              // Language Selection
               Expanded(
                 child: ListView(
                   children: _languages.keys.map((languageName) {
@@ -119,7 +114,6 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 ),
               ),
               
-              // Continue Button
               SizedBox(
                 width: double.infinity,
                 height: 56,
@@ -132,9 +126,9 @@ class _LanguageScreenState extends State<LanguageScreen> {
                     ),
                     elevation: 2,
                   ),
-                  child: const Text(
-                    'Continue',
-                    style: TextStyle(
+                  child: Text(
+                    l10n != null ? l10n.continueText : 'Continue',
+                    style: const TextStyle(
                       fontSize: 18,
                       color: Colors.white,
                       fontWeight: FontWeight.w600,
@@ -191,6 +185,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
             : null,
         onTap: () {
           setState(() {
+            _selectedLanguage = languageName;
             _selectedLanguageCode = languageCode;
           });
         },

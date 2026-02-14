@@ -1,79 +1,71 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import '../details/details_screen.dart';
+import 'package:pashu_bazaar/l10n/app_localizations.dart';
 
 class FavoritesScreen extends StatelessWidget {
   const FavoritesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final userId = FirebaseAuth.instance.currentUser!.uid;
+    final l10n = AppLocalizations.of(context);
+    
+    // Fallback in case localization isn't loaded
+    if (l10n == null) {
+      return const Scaffold(
+        body: Center(child: CircularProgressIndicator()),
+      );
+    }
 
     return Scaffold(
-      appBar: AppBar(title: const Text("My Favorites ❤️")),
-      body: StreamBuilder<QuerySnapshot>(
-        stream: FirebaseFirestore.instance
-            .collection("users")
-            .doc(userId)
-            .collection("favorites")
-            .snapshots(),
-        builder: (context, favSnapshot) {
-          if (favSnapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          }
-
-          if (!favSnapshot.hasData || favSnapshot.data!.docs.isEmpty) {
-            return const Center(child: Text("No favorites yet"));
-          }
-
-          final favDocs = favSnapshot.data!.docs;
-
-          return ListView.builder(
-            padding: const EdgeInsets.all(16),
-            itemCount: favDocs.length,
-            itemBuilder: (context, index) {
-              final favId = favDocs[index].id;
-
-              return StreamBuilder<DocumentSnapshot>(
-                stream: FirebaseFirestore.instance
-                    .collection("listings")
-                    .doc(favId)
-                    .snapshots(),
-                builder: (context, listingSnap) {
-                  if (!listingSnap.hasData || !listingSnap.data!.exists) {
-                    return const SizedBox();
-                  }
-
-                  final data =
-                      listingSnap.data!.data() as Map<String, dynamic>;
-
-                  return Card(
-                    margin: const EdgeInsets.only(bottom: 16),
-                    child: ListTile(
-                      leading: Image.network(
-                        data["image"],
-                        width: 60,
-                        fit: BoxFit.cover,
-                      ),
-                      title: Text(data["title"]),
-                      subtitle: Text("₹${data["price"]}"),
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => DetailsScreen(animal: data),
-                          ),
-                        );
-                      },
-                    ),
-                  ).animate().fadeIn();
-                },
-              );
-            },
-          );
-        },
+      appBar: AppBar(
+        title: Text("${l10n.myFavorites} ❤️"),
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Heart Icon
+              Container(
+                width: 120,
+                height: 120,
+                decoration: BoxDecoration(
+                  color: Colors.red.shade50,
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(
+                  Icons.favorite_border,
+                  size: 60,
+                  color: Colors.red,
+                ),
+              ),
+              
+              const SizedBox(height: 30),
+              
+              // ✅ LOCALIZED: "No favorites yet"
+              Text(
+                l10n.noFavoritesYet,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey.shade800,
+                ),
+              ),
+              
+              const SizedBox(height: 10),
+              
+              // ✅ LOCALIZED: Hint text
+              Text(
+                l10n.saveAnimalsHint,
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.grey.shade600,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
