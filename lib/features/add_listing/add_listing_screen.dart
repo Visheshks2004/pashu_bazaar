@@ -5,9 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:video_player/video_player.dart';
 import 'package:chewie/chewie.dart';
 import 'package:path/path.dart' as path;
@@ -35,7 +33,7 @@ class _AddListingScreenState extends State<AddListingScreen> {
   // For video preview
   VideoPlayerController? _videoController;
   ChewieController? _chewieController;
-  bool _isVideoInitialized = false;
+  final bool _isVideoInitialized = false;
 
   double? latitude;
   double? longitude;
@@ -182,7 +180,7 @@ class _AddListingScreenState extends State<AddListingScreen> {
             ),
             const SizedBox(height: 6),
             DropdownButtonFormField<String>(
-              value: _selectedCategory,
+              initialValue: _selectedCategory,
               hint: Text(l10n.selectCategory),
               isExpanded: true,
               decoration: InputDecoration(
@@ -365,7 +363,7 @@ class _AddListingScreenState extends State<AddListingScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Photos (${totalImages}/5)',
+              'Photos ($totalImages/5)',
               style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -416,7 +414,7 @@ class _AddListingScreenState extends State<AddListingScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Videos (${totalVideos}/1)',
+              'Videos ($totalVideos/1)',
               style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -782,13 +780,13 @@ class _AddListingScreenState extends State<AddListingScreen> {
 
   Future<void> _pickMultipleImages() async {
     try {
-      final List<XFile>? images = await _picker.pickMultiImage(
+      final List<XFile> images = await _picker.pickMultiImage(
         maxWidth: 1920,
         maxHeight: 1080,
         imageQuality: 85,
       );
       
-      if (images != null && images.isNotEmpty) {
+      if (images.isNotEmpty) {
         final currentImageCount = selectedImages.length + existingImageUrls.length;
         final availableSlots = 5 - currentImageCount;
         

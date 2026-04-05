@@ -1,16 +1,52 @@
-# pashu_bazaar
+# 🐄 Pashu Bazaar - Livestock Marketplace
 
-A new Flutter project.
+A Flutter application for buying and selling cows, buffaloes, oxen, and other livestock.
 
-## Getting Started
+## 📱 Features
+- User Authentication with Phone OTP
+- Multi-language Support (English, Hindi, Marathi)
+- Location-based Animal Listings
+- Filter & Search Functionality
+- Real-time Chat (WhatsApp Integration)
+- Firebase Backend
 
-This project is a starting point for a Flutter application.
+## 🚀 Getting Started
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
+- Flutter SDK 3.0+
+- Firebase Account
+- Android Studio / VS Code
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Installation
+1. Clone the repository
+2. Run `flutter pub get`
+3. Add your Firebase configuration files
+4. Run `flutter run`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🏗️ Project Structure
+lib/
+├── main.dart
+├── splash_screen.dart
+├── features/
+│ ├── auth/
+│ ├── home/
+│ ├── language/
+│ ├── add_listing/
+│ ├── details/
+│ └── profile/
+├── l10n/ # Localization files
+└── models/ # Data models
+
+## 🔧 Configuration
+1. Create Firebase project
+2. Add Android/iOS apps in Firebase Console
+3. Download config files and place in:
+   - `android/app/google-services.json`
+   - `ios/Runner/GoogleService-Info.plist`
+4. Update `firebase_options.dart` with your config
+
+## 👨‍💻 Author
+Vishesh Kumar
+
+## 🤝 Contributing
+Pull requests are welcome.

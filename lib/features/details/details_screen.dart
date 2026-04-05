@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:pashu_bazaar/l10n/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:video_player/video_player.dart';
@@ -15,45 +14,75 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
-  int _currentImageIndex = 0;
+  int _currentMediaIndex = 0;
   final PageController _pageController = PageController();
+  
+  // Video players
   VideoPlayerController? _videoController;
   ChewieController? _chewieController;
   bool _isVideoInitialized = false;
+  
+  // Combined media list
+  final List<dynamic> _mediaItems = [];
+  final List<bool> _isVideoList = [];
 
   @override
   void initState() {
     super.initState();
-    _initializeVideo();
+    _prepareMediaItems();
   }
 
-  void _initializeVideo() {
-    final videos = widget.animal["videos"] as List<dynamic>?;
-    if (videos != null && videos.isNotEmpty) {
-      _videoController = VideoPlayerController.networkUrl(Uri.parse(videos[0]));
-      _videoController!.initialize().then((_) {
-        _chewieController = ChewieController(
-          videoPlayerController: _videoController!,
-          autoPlay: false,
-          looping: false,
-          aspectRatio: _videoController!.value.aspectRatio,
-          autoInitialize: true,
-          errorBuilder: (context, errorMessage) {
-            return Center(
-              child: Text(
-                'Error loading video',
-                style: TextStyle(color: Colors.red),
-              ),
-            );
-          },
-        );
+  void _prepareMediaItems() {
+    // Get all images
+    final images = widget.animal["images"] as List<dynamic>? ?? [];
+    if (images.isEmpty) {
+      final singleImage = widget.animal["image"] as String?;
+      if (singleImage != null && singleImage.isNotEmpty) {
+        _mediaItems.add(singleImage);
+        _isVideoList.add(false);
+      }
+    } else {
+      _mediaItems.addAll(images);
+      _isVideoList.addAll(List.filled(images.length, false));
+    }
+
+    // Get all videos and add them AFTER all images
+    final videos = widget.animal["videos"] as List<dynamic>? ?? [];
+    if (videos.isNotEmpty) {
+      _mediaItems.addAll(videos);
+      _isVideoList.addAll(List.filled(videos.length, true));
+      
+      // Initialize first video if exists
+      _initializeVideo(videos[0] as String);
+    }
+  }
+
+  void _initializeVideo(String videoUrl) {
+    _videoController = VideoPlayerController.networkUrl(Uri.parse(videoUrl));
+    _videoController!.initialize().then((_) {
+      _chewieController = ChewieController(
+        videoPlayerController: _videoController!,
+        autoPlay: false,
+        looping: false,
+        aspectRatio: _videoController!.value.aspectRatio,
+        autoInitialize: true,
+        errorBuilder: (context, errorMessage) {
+          return Center(
+            child: Text(
+              'Error loading video',
+              style: TextStyle(color: Colors.red),
+            ),
+          );
+        },
+      );
+      if (mounted) {
         setState(() {
           _isVideoInitialized = true;
         });
-      }).catchError((error) {
-        print('Error initializing video: $error');
-      });
-    }
+      }
+    }).catchError((error) {
+      print('Error initializing video: $error');
+    });
   }
 
   @override
@@ -64,24 +93,9 @@ class _DetailsScreenState extends State<DetailsScreen> {
     super.dispose();
   }
 
-  List<String> _getAllImages() {
-    final images = widget.animal["images"] as List<dynamic>?;
-    if (images != null && images.isNotEmpty) {
-      return List<String>.from(images);
-    }
-    final singleImage = widget.animal["image"] as String?;
-    if (singleImage != null && singleImage.isNotEmpty) {
-      return [singleImage];
-    }
-    return [];
-  }
-
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final images = _getAllImages();
-    final videos = widget.animal["videos"] as List<dynamic>? ?? [];
-    final hasVideo = videos.isNotEmpty;
 
     return Scaffold(
       appBar: AppBar(
@@ -89,9 +103,9 @@ class _DetailsScreenState extends State<DetailsScreen> {
       ),
       body: Column(
         children: [
-          // Media Gallery
-          if (images.isNotEmpty || hasVideo)
-            _buildMediaGallery(images, hasVideo, l10n),
+          // Media Gallery - Shows images first, then video as last slide
+          if (_mediaItems.isNotEmpty)
+            _buildMediaGallery(),
 
           Expanded(
             child: SingleChildScrollView(
@@ -207,52 +221,45 @@ class _DetailsScreenState extends State<DetailsScreen> {
     );
   }
 
-  Widget _buildMediaGallery(List<String> images, bool hasVideo, AppLocalizations l10n) {
+  Widget _buildMediaGallery() {
     return Container(
       height: 300,
       color: Colors.black,
       child: Stack(
         children: [
-          // Images PageView
+          // Media PageView
           PageView.builder(
             controller: _pageController,
-            itemCount: images.length,
+            itemCount: _mediaItems.length,
             onPageChanged: (index) {
               setState(() {
-                _currentImageIndex = index;
+                _currentMediaIndex = index;
               });
             },
             itemBuilder: (context, index) {
-              return Image.network(
-                images[index],
-                fit: BoxFit.contain,
-                errorBuilder: (c, e, s) => Container(
-                  color: Colors.grey.shade800,
-                  child: const Center(
-                    child: Icon(Icons.broken_image, size: 50, color: Colors.white),
+              final mediaItem = _mediaItems[index];
+              final isVideo = _isVideoList[index];
+              
+              if (isVideo) {
+                // Show video player for video items
+                return _buildVideoPlayer(mediaItem as String);
+              } else {
+                // Show image for image items
+                return Image.network(
+                  mediaItem as String,
+                  fit: BoxFit.contain,
+                  errorBuilder: (c, e, s) => Container(
+                    color: Colors.grey.shade800,
+                    child: const Center(
+                      child: Icon(Icons.broken_image, size: 50, color: Colors.white),
+                    ),
                   ),
-                ),
-              );
+                );
+              }
             },
           ),
 
-          // Video overlay if available
-          if (hasVideo && _isVideoInitialized && _chewieController != null)
-            Positioned.fill(
-              child: Container(
-                color: Colors.black54,
-                child: Center(
-                  child: IconButton(
-                    icon: const Icon(Icons.play_circle_fill, size: 60, color: Colors.white),
-                    onPressed: () {
-                      _showVideoDialog(context, l10n);
-                    },
-                  ),
-                ),
-              ),
-            ),
-
-          // Image counter
+          // Media counter (shows e.g., "3/6" - video is last)
           Positioned(
             bottom: 16,
             right: 16,
@@ -263,35 +270,41 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Text(
-                '${_currentImageIndex + 1}/${images.length}',
+                '${_currentMediaIndex + 1}/${_mediaItems.length}',
                 style: const TextStyle(color: Colors.white),
               ),
             ),
           ),
+
+          // Video indicator for video slides
+          if (_isVideoList[_currentMediaIndex])
+            const Positioned(
+              bottom: 16,
+              left: 16,
+              child: Row(
+                children: [
+                  Icon(Icons.videocam, color: Colors.white, size: 20),
+                  SizedBox(width: 4),
+                  Text(
+                    'Video',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ],
+              ),
+            ),
         ],
       ),
     );
   }
 
-  Future<void> _showVideoDialog(BuildContext context, AppLocalizations l10n) async {
-    return showDialog(
-      context: context,
-      builder: (context) => Dialog.fullscreen(
-        child: Scaffold(
-          backgroundColor: Colors.black,
-          appBar: AppBar(
-            backgroundColor: Colors.black,
-            foregroundColor: Colors.white,
-            title: Text('Video Preview', style: const TextStyle(color: Colors.white)),
-          ),
-          body: Center(
-            child: _isVideoInitialized && _chewieController != null
-                ? Chewie(controller: _chewieController!)
-                : const CircularProgressIndicator(),
-          ),
-        ),
-      ),
-    );
+  Widget _buildVideoPlayer(String videoUrl) {
+    if (!_isVideoInitialized || _chewieController == null) {
+      return const Center(
+        child: CircularProgressIndicator(color: Colors.white),
+      );
+    }
+    
+    return Chewie(controller: _chewieController!);
   }
 
   Widget _buildInfoRow(IconData icon, String label, String value) {

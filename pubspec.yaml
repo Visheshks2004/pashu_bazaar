@@ -62,16 +62,28 @@ dependencies:
   path: ^1.9.1
   path_provider: ^2.1.5
   video_thumbnail: ^0.5.6
+  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.14.4
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/app_icon.png"
+  # Optional: Adaptive icon for Android 8.0+
+  adaptive_icon_background: "#FFFFFF"  # Background color
+  adaptive_icon_foreground: "assets/icons/app_icon.png"  # Foreground image
+  # Optional: Remove alpha channel for iOS
+  remove_alpha_ios: true
+  
   flutter_lints: ^5.0.0
   flutter_gen: ^5.3.0
 
@@ -86,6 +98,12 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+    - assets/images/categories/all.png
+    - assets/images/categories/cow.png
+    - assets/images/categories/buffalo.png
+    - assets/images/categories/ox.png
+    - assets/images/categories/bull.png
+    - assets/images/categories/others.png
 
 
   # To add assets to your application, add an assets section, like this:
